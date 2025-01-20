@@ -1,0 +1,15 @@
+{
+    "name": "ember/oop",
+    "autoload": {
+        "psr-4": {
+            "Ember\\Oop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ember",
+            "email": "evebay@mail.ru"
+        }
+    ],
+    "require": {}
+}
