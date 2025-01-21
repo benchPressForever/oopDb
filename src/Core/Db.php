@@ -3,6 +3,7 @@
 namespace Ember\Oop\Core;
 
 use PDO;
+use PDOStatement;
 
 class Db
 {
@@ -25,17 +26,25 @@ class Db
         return $this->connection;
     }
 
+    private function query(string $sql, array $params = []): PDOStatement
+    {
+        $pdoStatement = $this->getConnection()->prepare($sql);
+        $pdoStatement->execute($params);
+        return $pdoStatement;
+    }
+
+
+
     //Select where id = :id, ['id' => 1]
     public function queryOne(string $sql, array $params = []): ?array
     {
-
-
+         return $this->query($sql, $params)->fetch();
     }
 
     //select *
-    public function queryAll($sql)
+    public function queryAll($sql): bool|array
     {
-        return $sql;
+        return $this->query($sql)->fetchAll();
     }
 
 }

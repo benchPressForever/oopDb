@@ -8,15 +8,11 @@ include "vendor/autoload.php";
 
 $db = new Db();
 $post = new Post($db);
-$user = new User($db);
 
 
-//Db->table('users')->where('name', '2')->get();
-echo $user->getAll();
-print_r($user->getOne(5));
+print_r($post->getOne(71));
 
-$post = $post->getAll();
-print_r($post);
+
 
 
 
