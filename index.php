@@ -5,11 +5,19 @@ use Ember\Oop\Model\Post;
 
 include "vendor/autoload.php";
 
-$post = new Post();
-$category = new Category();
+
+//$category = new Category("Хобби");
+
+
+
+
+
+/**@var Category $category */
+$category = Category::getOne(1);
 
 print_r($category->getAll());
-print_r($post->getAll());
+
+
 
 
 

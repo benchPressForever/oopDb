@@ -2,6 +2,8 @@
 
 namespace Ember\Oop\Core;
 
+use Ember\Oop\Model\Model;
+use Ember\Oop\traits\TSingletone;
 use PDO;
 use PDOStatement;
 
@@ -15,18 +17,7 @@ class Db
         'database' => 'blog.db'
     ];
 
-    private function __construct(){}
-    private function __clone(){}
-
-    private static ?Db $instance = null;
-
-    public static function getInstance(): Db
-    {
-        if (is_null(static::$instance)) {
-            static::$instance = new static();
-        }
-        return static::$instance;
-    }
+    use TSingletone;
 
     private ?PDO $connection = null;
 
@@ -53,6 +44,14 @@ class Db
     {
          return $this->query($sql, $params)->fetch();
     }
+
+    public function queryOneObject(string $sql, array $params, string $class): Model
+    {
+        $pdoStatement = $this->query($sql, $params);
+        $pdoStatement->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, $class);
+         return $pdoStatement->fetch();
+    }
+
 
     //select *
     public function queryAll($sql): bool|array

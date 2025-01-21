@@ -4,10 +4,17 @@ namespace Ember\Oop\Model;
 
 class Category extends Model
 {
-    public int $id;
-    public string $category;
+    public ?int $id;
+    public ?string $category;
 
-    protected function getTableName(): string
+
+    public function __construct(string $category = null)
+    {
+        $this->category = $category;
+    }
+
+
+    protected static function getTableName(): string
     {
         return 'categories';
     }

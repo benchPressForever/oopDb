@@ -10,26 +10,22 @@ abstract class Model implements IModel
 {
 
 
-    protected Db $db;
 
-    abstract protected function getTableName(): string;
+    abstract static protected function getTableName(): string;
 
-    public function __construct()
+
+
+    public static function getOne(int $id): Model
     {
-        $this->db = Db::getInstance();
-    }
-
-
-    public function getOne(int $id)
-    {
-        $sql = "SELECT * FROM {$this->getTableName()} WHERE id = :id" . PHP_EOL;
-        return $this->db->queryOne($sql, ['id' => $id]);
+        $table = static::getTableName();
+        $sql = "SELECT * FROM $table WHERE id = :id" . PHP_EOL;
+        return Db::getInstance()->queryOneObject($sql, ['id' => $id], static::class);
     }
 
 
     public function getAll()
     {
         $sql = "SELECT * FROM {$this->getTableName()}" . PHP_EOL;
-        return $this->db->queryAll($sql);
+        return Db::getInstance()->queryAll($sql);
     }
 }
