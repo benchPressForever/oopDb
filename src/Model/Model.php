@@ -8,13 +8,15 @@ use Ember\Oop\Interfaces\IModel;
 
 abstract class Model implements IModel
 {
+
+
     protected Db $db;
 
     abstract protected function getTableName(): string;
 
-    public function __construct(Db $db)
+    public function __construct()
     {
-        $this->db = $db;
+        $this->db = Db::getInstance();
     }
 
 

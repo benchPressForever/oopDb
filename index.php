@@ -1,16 +1,15 @@
 <?php
 
-use Ember\Oop\Core\Db;
+use Ember\Oop\Model\Category;
 use Ember\Oop\Model\Post;
-use Ember\Oop\Model\User;
 
 include "vendor/autoload.php";
 
-$db = new Db();
-$post = new Post($db);
+$post = new Post();
+$category = new Category();
 
-
-print_r($post->getOne(71));
+print_r($category->getAll());
+print_r($post->getAll());
 
 
 
