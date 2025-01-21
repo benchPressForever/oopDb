@@ -1,6 +1,5 @@
 <?php
 
-//TODO * реализуйте метод$ $user->query()->where('name', 'alex');
 
 namespace Ember\Oop\Model;
 
@@ -18,20 +17,11 @@ abstract class Model implements IModel
         $this->db = $db;
     }
 
-    public function query()
-    {
-        return $this;
-    }
-
-    public function where()
-    {
-        //select * from table where name = 'alex'
-    }
 
     public function getOne(int $id)
     {
-        $sql = "SELECT * FROM {$this->getTableName()} WHERE id = $id" . PHP_EOL;
-        return $this->db->queryOne($sql);
+        $sql = "SELECT * FROM {$this->getTableName()} WHERE id = :id" . PHP_EOL;
+        return $this->db->queryOne($sql, ['id' => $id]);
     }
 
 

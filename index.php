@@ -1,7 +1,5 @@
 <?php
 
-//TODO добавьте остальные модели, комменты, роли и категории
-
 use Ember\Oop\Core\Db;
 use Ember\Oop\Model\Post;
 use Ember\Oop\Model\User;
@@ -33,7 +31,8 @@ print_r($post);
 $post->save();
 
 //R read
-$post = Post::get($id);
+$post = Post::getOne($id);
+$post = Post::getAll();
 
 //U update
 $post->title = 'new';

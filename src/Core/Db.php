@@ -2,13 +2,34 @@
 
 namespace Ember\Oop\Core;
 
+use PDO;
+
 class Db
 {
+    private array $config = [
+        'driver' => 'sqlite',
+        'host' => 'localhost',
+        'login' => '',
+        'password' => '',
+        'database' => 'blog.db'
+    ];
 
-    //Select where id = 1
-    public function queryOne($sql)
+    private ?PDO $connection = null;
+
+    private function getConnection(): PDO
     {
-        return $sql;
+        if (is_null($this->connection)) {
+            $this->connection = new PDO("{$this->config['driver']}:{$this->config['database']}");
+            $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        }
+        return $this->connection;
+    }
+
+    //Select where id = :id, ['id' => 1]
+    public function queryOne(string $sql, array $params = []): ?array
+    {
+
+
     }
 
     //select *
