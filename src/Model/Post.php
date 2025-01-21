@@ -1,11 +1,14 @@
 <?php
 
+//TODO 1. Реализовать Insert для всех моделей
+
+
 namespace Ember\Oop\Model;
 
 
 class Post extends Model
 {
-    public ?int $id;
+    public ?int $id = null;
     public ?string $title;
     public ?string $text;
 

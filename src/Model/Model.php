@@ -1,5 +1,6 @@
 <?php
 
+//TODO 2* Реализовать универсальный insert для всех моделей
 
 namespace Ember\Oop\Model;
 
@@ -10,9 +11,7 @@ abstract class Model implements IModel
 {
 
 
-
     abstract static protected function getTableName(): string;
-
 
 
     public static function getOne(int $id): Model

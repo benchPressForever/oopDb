@@ -37,6 +37,15 @@ class Db
         return $pdoStatement;
     }
 
+    public function lastInsertId(): int
+    {
+        return $this->getConnection()->lastInsertId();
+    }
+
+    public function execute(string $sql, array $params = []): PDOStatement
+    {
+        return $this->query($sql, $params);
+    }
 
 
     //Select where id = :id, ['id' => 1]

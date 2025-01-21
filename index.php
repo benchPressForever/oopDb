@@ -1,14 +1,20 @@
 <?php
 
 use Ember\Oop\Model\Category;
-use Ember\Oop\Model\Post;
 
 include "vendor/autoload.php";
 
 
-//$category = new Category("Хобби");
 
 
+$category = new Category("Хобби");
+
+$category->test();
+
+DIE();
+$category->insert();
+
+print_r($category);
 
 
 
@@ -31,7 +37,7 @@ print_r($category->getAll());
 
 //C create
 /*$post = new Post("post");
-$post->save();
+$post->insert();
 
 //R read
 $post = Post::getOne($id);
