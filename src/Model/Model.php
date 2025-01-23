@@ -1,30 +1,24 @@
 <?php
 
-//TODO 2* Реализовать универсальный insert для всех моделей
 
 namespace Ember\Oop\Model;
 
-use Ember\Oop\Core\Db;
-use Ember\Oop\Interfaces\IModel;
 
-abstract class Model implements IModel
+abstract class Model extends DbModel
 {
 
 
-    abstract static protected function getTableName(): string;
-
-
-    public static function getOne(int $id): Model
+    public function __get(string $name): mixed
     {
-        $table = static::getTableName();
-        $sql = "SELECT * FROM $table WHERE id = :id" . PHP_EOL;
-        return Db::getInstance()->queryOneObject($sql, ['id' => $id], static::class);
+        //TODO* Проверить по props можно ли читать это поле
+        return $this->$name;
     }
 
-
-    public function getAll()
+    public function __set(string $name, $value): void
     {
-        $sql = "SELECT * FROM {$this->getTableName()}" . PHP_EOL;
-        return Db::getInstance()->queryAll($sql);
+        //TODO* Проверить по props можно ли писать в это поле и установите props в True
+
+        $this->$name = $value;
     }
+
 }

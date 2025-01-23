@@ -5,6 +5,6 @@ namespace Ember\Oop\Interfaces;
 interface IModel
 {
     public static function getOne(int $id);
-    public function getAll();
+    public static function getAll();
 
 }

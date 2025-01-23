@@ -6,16 +6,14 @@ use Ember\Oop\Core\Db;
 
 class Category extends Model
 {
-    public ?int $id = null;
-    public ?string $category;
+    protected ?int $id = null;
+    protected ?string $category;
 
+    protected array $props = [
+        'id' => false,
+        'category' => false,
+    ];
 
-    public function test()
-    {
-        foreach ($this as $key => $value) {
-            echo $key . " => " . $value . "\n";
-        }
-    }
 
     public function __construct(string $category = null)
     {

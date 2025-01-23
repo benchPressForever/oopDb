@@ -1,6 +1,6 @@
 <?php
 
-//TODO 1. Реализовать Insert для всех моделей
+//TODO 1*. Реализовать Update для всех моделей
 
 
 namespace Ember\Oop\Model;
@@ -8,9 +8,15 @@ namespace Ember\Oop\Model;
 
 class Post extends Model
 {
-    public ?int $id = null;
-    public ?string $title;
-    public ?string $text;
+    protected ?int $id = null;
+    protected ?string $title;
+    protected ?string $text;
+
+    protected array $props = [
+        'id' => false,
+        'title' => false,
+        'text' => false,
+    ];
 
 
     public function __construct(string $title = null, string $text = null)

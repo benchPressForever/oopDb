@@ -4,8 +4,14 @@ namespace Ember\Oop\Model;
 
 class User extends Model
 {
-    public ?int $id;
-    public ?string $name;
+    protected ?int $id;
+    protected ?string $name;
+
+    protected array $props = [
+        'id' => false,
+        'name' => false,
+    ];
+
 
     protected static function getTableName():string
     {
