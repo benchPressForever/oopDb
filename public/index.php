@@ -1,16 +1,12 @@
 <?php
 
-use Ember\Oop\Model\Category;
-use Ember\Oop\Model\Post;
 
 include __DIR__ . "/../vendor/autoload.php";
 
 //роутинг
 //localhost/?c=post&a=update&id=2
 
-$post = Post::getOne(80);
-$post->delete();
-die();
+
 
 $controllerName = $_GET['c'] ?? 'posts';
 $actionName = $_GET['a'] ?? 'index';
