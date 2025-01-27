@@ -1,9 +1,9 @@
 <?php
 
-namespace Ember\Oop\core;
+namespace Msi\Ooptop\core;
 
-use Ember\Oop\model\Model;
-use Ember\Oop\traits\TSingletone;
+use Msi\Ooptop\model\Model;
+use Msi\Ooptop\traits\TSingletone;
 use PDO;
 use PDOStatement;
 

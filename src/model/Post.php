@@ -3,7 +3,7 @@
 //TODO 1*. Реализовать Update для всех моделей
 
 
-namespace Ember\Oop\model;
+namespace Msi\Ooptop\model;
 
 
 class Post extends Model

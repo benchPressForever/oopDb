@@ -1,7 +1,9 @@
 <?php
 
+session_start();
 
-use Ember\Oop\core\Render;
+
+use Msi\Ooptop\core\Render;
 
 include __DIR__ . "/../vendor/autoload.php";
 
@@ -13,7 +15,7 @@ include __DIR__ . "/../vendor/autoload.php";
 $controllerName = $_GET['c'] ?? 'posts';
 $actionName = $_GET['a'] ?? 'index';
 
-$controllerClass = "Ember\\Oop\\controllers\\" . ucfirst($controllerName) . "Controller";
+$controllerClass = "Msi\\Ooptop\\controllers\\" . ucfirst($controllerName) . "Controller";
 
 try {
     if (class_exists($controllerClass)) {

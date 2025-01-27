@@ -1,8 +1,8 @@
 <?php
 
-namespace Ember\Oop\traits;
+namespace Msi\Ooptop\traits;
 
-use Ember\Oop\core\Db;
+use Msi\Ooptop\core\Db;
 
 trait TSingletone
 {

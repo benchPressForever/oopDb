@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Ember\Oop\model;
+namespace Msi\Ooptop\model;
 
 
 abstract class Model extends DbModel

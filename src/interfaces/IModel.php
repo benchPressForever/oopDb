@@ -1,6 +1,6 @@
 <?php
 
-namespace Ember\Oop\interfaces;
+namespace Msi\Ooptop\interfaces;
 
 interface IModel
 {

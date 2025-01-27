@@ -1,6 +1,6 @@
 <?php
 
-namespace Ember\Oop\model;
+namespace Msi\Ooptop\model;
 
 class User extends Model
 {
@@ -12,6 +12,15 @@ class User extends Model
         'name' => false,
     ];
 
+    public static function getName()
+    {
+        return $_SESSION['login'] ?? false;
+    }
+
+    public static function isAdmin(): bool
+    {
+        return $_SESSION['login'] === 'admin';
+    }
 
     protected static function getTableName():string
     {

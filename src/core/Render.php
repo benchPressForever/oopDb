@@ -1,8 +1,8 @@
 <?php
 
-namespace Ember\Oop\core;
+namespace Msi\Ooptop\core;
 
-use Ember\Oop\interfaces\IRender;
+use Msi\Ooptop\interfaces\IRender;
 
 class Render implements IRender
 {

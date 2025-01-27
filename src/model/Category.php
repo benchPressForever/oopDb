@@ -1,8 +1,8 @@
 <?php
 
-namespace Ember\Oop\model;
+namespace Msi\Ooptop\model;
 
-use Ember\Oop\core\Db;
+use Msi\Ooptop\core\Db;
 
 class Category extends Model
 {

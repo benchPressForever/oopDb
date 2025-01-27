@@ -1,17 +1,18 @@
 {
-    "name": "ember/oop",
+    "name": "msi/ooptop",
     "autoload": {
         "psr-4": {
-            "Ember\\Oop\\": "src/"
+            "Msi\\Ooptop\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "ember",
-            "email": "evebay@mail.ru"
+            "name": "killu456",
+            "email": "131191776+killu456@users.noreply.github.com"
         }
     ],
     "require": {
-      "ext-pdo": "*"
+        "ext-pdo": "*",
+        "fzaninotto/faker": "^1.5"
     }
 }
