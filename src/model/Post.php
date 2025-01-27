@@ -3,7 +3,7 @@
 //TODO 1*. Реализовать Update для всех моделей
 
 
-namespace Ember\Oop\Model;
+namespace Ember\Oop\model;
 
 
 class Post extends Model
@@ -14,7 +14,6 @@ class Post extends Model
     protected ?int $id_category;
 
     protected array $props = [
-        'id' => false,
         'title' => false,
         'text' => false,
         'id_category' => false,

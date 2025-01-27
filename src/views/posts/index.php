@@ -1,4 +1,11 @@
 <h2>Посты</h2>
+Добавить новый пост:<br>
+<form action="">
+    <input type="text" name="title"><br>
+    <input type="text" name="text"><br>
+    <input type="submit" value="Добавить">
+
+</form>
 
       <?php foreach ($posts as $post):?>
           <div id="">

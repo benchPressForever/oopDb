@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Ember\Oop\Model;
+namespace Ember\Oop\model;
 
 
 abstract class Model extends DbModel
@@ -13,6 +13,7 @@ abstract class Model extends DbModel
         if (array_key_exists($name, $this->props)) {
             return $this->$name;
         }
+        throw new \Exception("Нет такого поля");
 
     }
 

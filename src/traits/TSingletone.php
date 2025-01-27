@@ -2,7 +2,7 @@
 
 namespace Ember\Oop\traits;
 
-use Ember\Oop\Core\Db;
+use Ember\Oop\core\Db;
 
 trait TSingletone
 {

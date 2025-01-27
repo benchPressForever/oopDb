@@ -1,6 +1,6 @@
 <?php
 
-namespace Ember\Oop\Model;
+namespace Ember\Oop\model;
 
 class User extends Model
 {

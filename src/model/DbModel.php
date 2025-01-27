@@ -1,15 +1,15 @@
 <?php
 
-namespace Ember\Oop\Model;
+namespace Ember\Oop\model;
 
-use Ember\Oop\Core\Db;
-use Ember\Oop\Interfaces\IModel;
+use Ember\Oop\core\Db;
+use Ember\Oop\interfaces\IModel;
 
 abstract class DbModel implements IModel
 {
     abstract static protected function getTableName(): string;
 
-    public static function getOne(int $id): Model
+    public static function getOne(int $id)
     {
         $table = static::getTableName();
         $sql = "SELECT * FROM $table WHERE id = :id" . PHP_EOL;
@@ -65,7 +65,7 @@ abstract class DbModel implements IModel
         $params['id'] = $this->id;
 
         $sql = "UPDATE `{$tableName}` SET {$colums} WHERE `id` = :id";
-        print_r($sql);
+
         Db::getInstance()->execute($sql, $params);
         return $this;
     }

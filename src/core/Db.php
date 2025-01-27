@@ -1,8 +1,8 @@
 <?php
 
-namespace Ember\Oop\Core;
+namespace Ember\Oop\core;
 
-use Ember\Oop\Model\Model;
+use Ember\Oop\model\Model;
 use Ember\Oop\traits\TSingletone;
 use PDO;
 use PDOStatement;
@@ -54,7 +54,7 @@ class Db
          return $this->query($sql, $params)->fetch();
     }
 
-    public function queryOneObject(string $sql, array $params, string $class): Model
+    public function queryOneObject(string $sql, array $params, string $class)
     {
         $pdoStatement = $this->query($sql, $params);
         $pdoStatement->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, $class);
