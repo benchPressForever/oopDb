@@ -47,14 +47,6 @@ class Db
         return $this->query($sql, $params);
     }
 
-    public function queryLimit($sql, $limit): bool|array
-    {
-        $pdoStatement = $this->getConnection()->prepare($sql);
-        $pdoStatement->bindValue(1, $limit, \PDO::PARAM_INT);
-        $pdoStatement->execute();
-        return $pdoStatement->fetchAll();
-    }
-
 
     //Select where id = :id, ['id' => 1]
     public function queryOne(string $sql, array $params = []): ?array

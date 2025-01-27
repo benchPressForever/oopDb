@@ -65,7 +65,7 @@ abstract class DbModel implements IModel
         $params['id'] = $this->id;
 
         $sql = "UPDATE `{$tableName}` SET {$colums} WHERE `id` = :id";
-
+        print_r($sql);
         Db::getInstance()->execute($sql, $params);
         return $this;
     }
@@ -77,13 +77,6 @@ abstract class DbModel implements IModel
         return Db::getInstance()->execute($sql, ['id' => $this->id]);
     }
 
-    public static function getLimit($limit)
-    {
-        $tableName = static::getTableName();
-        $sql = "SELECT * FROM {$tableName} LIMIT 0, ?";
-        return Db::getInstance()->queryLimit($sql, $limit);
-    }
-
     public function save()
     {
         if (is_null($this->id)) {
@@ -91,5 +84,6 @@ abstract class DbModel implements IModel
         } else {
             $this->update();
         }
+        return $this;
     }
 }

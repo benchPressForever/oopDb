@@ -11,7 +11,7 @@ class Post extends Model
     protected ?int $id = null;
     protected ?string $title;
     protected ?string $text;
-    protected ?string $id_category;
+    protected ?int $id_category;
 
     protected array $props = [
         'id' => false,
@@ -21,7 +21,7 @@ class Post extends Model
     ];
 
 
-    public function __construct(string $title = null, string $text = null, string $id_category = null)
+    public function __construct(string $title = null, string $text = null, int $id_category = null)
     {
         $this->title = $title;
         $this->text = $text;
